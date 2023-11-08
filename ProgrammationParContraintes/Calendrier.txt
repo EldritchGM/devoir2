@@ -1,0 +1,10 @@
+Calendrier:
+     j1  j2  j3  j4  j5  j6  j7  j8  j9 j10 j11 j12 j13 j14 j15 j16
+CO: @TA      HO @AL  TA @HO  NA  AL  DA @NA  UT  MU @DA @UT @MU  
+TA:  CO  DA  UT @HO @CO  NA @MU      HO @AL  MU @UT     @DA  AL @NA
+HO:  DA  NA @CO  TA  AL  CO     @DA @TA  UT @NA @AL  MU     @UT @MU
+DA: @HO @TA      UT    MU @AL  HO @CO @MU  AL  NA  CO  TA @NA @UT
+NA:  MU @HO  AL @MU     @TA @CO     @UT  CO  HO @DA  UT @AL  DA  TA
+MU: @NA @AL    NA  UT @DA  TA @UT  AL  DA @TA @CO @HO    CO  HO
+AL:  UT  MU @NA  CO @HO @UT  DA @CO @MU  TA @DA  HO    NA @TA  
+UT: @AL   @TA @DA @MU  AL    MU  NA @HO @CO  TA @NA  CO  HO  DA

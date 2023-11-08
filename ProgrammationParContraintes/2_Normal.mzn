@@ -58,7 +58,7 @@ constraint
 solve maximize total_commun;
 
 % symmetry breaking
-constraint sum([if terrain[i,j] == R then 1 else 0 endif | i in 1..(n div 2), j in 1..(n div 2)]) > 0;
+constraint forall(i in 1..n) (terrain[i, 1] != R);
 
 %-----------------------------------------------------------------------------%
 output 

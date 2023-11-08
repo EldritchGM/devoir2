@@ -69,7 +69,7 @@ constraint
   forall(jour in jours) (
   forall(equipe1 in equipes) (
       calendrier[equipe1, jour] = 0 
-      \/ (sum([if (dates[equipe1, equipe2].1 = jour \/ dates[equipe1, equipe2].2 = jour)  then 1 else 0 endif | equipe2 in equipes]) > 0)
+      \/ (sum([if ((dates[equipe1, equipe2].1 = jour \/ dates[equipe1, equipe2].2 = jour) /\ equipe1 != equipe2) then 1 else 0 endif | equipe2 in equipes]) > 0)  
     ));
   
 % 5- Une équipe ne doit pas jouer trop souvent à domicile, elle n’est donc pas autorisée à jouer plus de 7 jours sur son propre terrain. 

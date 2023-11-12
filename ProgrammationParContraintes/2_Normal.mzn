@@ -1,5 +1,5 @@
-% NOM_ETUDIANT_1 (MATRICULE_1)
-% NOM_ETUDIANT_2 (MATRICULE_2)
+% Romain LUCAS (2309703)
+% Corentin CLEMENT (2311514)
 
 include "globals.mzn";
 
@@ -23,24 +23,28 @@ var int: total_commun;
 % Partie étudiant
 %-----------------------------------------------------------------------------%
 
-
+% Il y a autant de ours B que de tours R et ce nombre est total_commun
 constraint total_commun = sum([if terrain[i,j] == B then 1 else 0 endif | i in 1..n, j in 1..n]);
 constraint total_commun = sum([if terrain[i,j] == R then 1 else 0 endif | i in 1..n, j in 1..n]);
 
 
-
+% Sur une même ligne, il ne peut pas y avoir les deux types de tours
 constraint
   forall(i in 1..n) (
   forall (j1 in 1..n) (
   forall (j2 in 1..n) (
     not (terrain[i, j1] = R /\ terrain[i,j2] = B)
   )));
+  
+% Sur une même colonne, il ne peut pas y avoir les deux types de tours
 constraint
   forall(j in 1..n) (
   forall (i1 in 1..n) (
   forall (i2 in 1..n) (
     not (terrain[i1, j] = R /\ terrain[i2,j] = B)
   )));
+  
+% Sur une même diagonale, il ne peut pas y avoir les deux types de tours
 constraint 
   forall (i1 in 1..n) (
   forall (i2 in 1..n) (
@@ -57,7 +61,7 @@ constraint
   ))));
 solve maximize total_commun;
 
-% symmetry breaking
+% symmetry breaking: on prend seulement les solutions n'ayant pas de tours sur la première colonne ou seulement des tours bleues
 constraint forall(i in 1..n) (terrain[i, 1] != R);
 
 %-----------------------------------------------------------------------------%

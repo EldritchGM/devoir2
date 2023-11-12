@@ -1,5 +1,5 @@
-% NOM_ETUDIANT_1 (MATRICULE_1)
-% NOM_ETUDIANT_2 (MATRICULE_2)
+% Romain LUCAS (2309703)
+% Corentin CLEMENT (2311514)
 
 include "globals.mzn";
 
